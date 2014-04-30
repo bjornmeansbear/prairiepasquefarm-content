@@ -1,4 +1,9 @@
 
+body {
+  padding-top: 60px;
+  padding-bottom: 300px;
+}
+
 img.logo { max-width: 100%; }
 
 .border-top {
@@ -10,7 +15,6 @@ img.logo { max-width: 100%; }
 #carousel-example-generic {
   height: 555px;
   max-height: 640px;
-  margin-bottom: 180px;
 }
 
 p.caption {
