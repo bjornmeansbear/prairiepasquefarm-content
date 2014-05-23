@@ -1,0 +1,60 @@
+
+body {
+  padding-top: 60px;
+  padding-bottom: 300px;
+}
+
+img.logo { max-width: 100%; }
+
+.border-top {
+  border-top: 1.5px solid black;
+  margin-top: 60px;
+  padding-top: 60px;
+}
+
+#carousel-example-generic {
+  height: 555px;
+  max-height: auto;
+  height: 700px;
+}
+
+p.caption {
+  width: 75%;
+  margin: 1em auto;
+}
+
+#form6 div {
+  margin-bottom: 30px;
+}
+
+#form6 div > label {
+  display: block;
+}
+
+#form6 div > input,
+#form6 div textarea {
+  width: 100%;
+}
+
+#form6 div > span {
+  float: left;
+  width: 47.5%;
+}
+
+#form6 div > span.gutter   {
+  margin-right: 5%;
+}
+
+#form6 div > span input {
+  display: inline-block;
+  width: 100%;
+}
+
+span > label,
+span.req,
+form small {
+  color: #B9BAB8;
+  font-weight: normal;
+}
+
+.clear {display:block;clear: both;}
