@@ -29,9 +29,9 @@
     </header>
 
     <main class="container text-center">
-      <img class="logo" src="ppfmain.jpg" style="margin:0 auto; display:block;" />
+      <a href="index.html"><img class="logo" src="ppfmain.jpg" style="margin:0 auto; display:block;" /></a>
 
-      <div class="row">
+      <div class="row" id="slides">
         <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
           <div id="carousel-example-generic" class="carousel slide border-top" data-ride="carousel">      
             <!-- Wrapper for slides -->
@@ -41,7 +41,7 @@
         </div>
       </div>
 
-      <div class="row text-left">
+      <div class="row text-left" id="contact">
         <h2 class="border-top col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3"> Contact</h2>
         <form id="form6" name="form6" class="wufoo col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" accept-charset="UTF-8" autocomplete="off" enctype="multipart/form-data" method="post" novalidate action="https://ookb.wufoo.com/forms/w19jmp17095qncv/#public">
           
@@ -52,7 +52,7 @@
           
           <div>
             <label class="desc" id="title2" for="Field2">Email<span id="req_2" class="req">*</span></label>
-            <input id="Field2" name="Field2" type="email" spellcheck="false" class="field text large" value="youremail@email.com" maxlength="255" tabindex="2" /> 
+            <input id="Field2" name="Field2" type="email" spellcheck="false" class="field text large" maxlength="255" tabindex="2" /> 
           </div>
           
           <div>
@@ -79,6 +79,9 @@
           <small>* - This field is required</small>
 
         </form> 
+      </div>
+      <div class="row" id="thanks" style="display:none;">
+        <p class="lead border-top col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">Thanks for contacting us. <br/>Nancy will get back to you as soon as is possible.</p>
       </div>
     </main>
 
@@ -108,6 +111,37 @@
         });
         $("#carousel-example-generic div.carousel-inner div.item:nth-child(1)").addClass("active");
       });
+    </script>
+    
+    <script>
+      var hash         = window.location.hash;
+      var thanks       = $('#thanks');
+      var contact      = $('#contact');
+      var slides       = $('#slides');
+      var thanks_shown = false;
+    
+      var show_thanks = function() {
+        hash = window.location.hash;
+        if ('#thanks' == hash) {
+          console.log('show thanks');
+          thanks.show();
+          contact.hide();
+          slides.hide();
+          thanks_shown = true;
+        }
+        else if (thanks_shown) {
+          console.log('hide thanks');
+          thanks.hide();
+          contact.show();
+          slides.show();
+          thanks_shown = false;
+        }
+        else {
+          console.log(hash);
+        }
+      }
+      window.onhashchange = show_thanks;
+      show_thanks();
     </script>
 
     <!-- Latest compiled and minified JavaScript -->
