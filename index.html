@@ -34,9 +34,28 @@
       <div class="row" id="slides">
         <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
           <div id="carousel-example-generic" class="carousel slide border-top" data-ride="carousel">      
+
+            <!-- TK
+            <ol class="carousel-indicators">
+              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+            -->
+            
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
             </div>
+
+            <!-- Controls -->
+<!-- TK
+            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+-->
           </div>
         </div>
       </div>
@@ -88,8 +107,8 @@
     <footer class="container text-center">
       <div class="row">
         <p class="border-top col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-          Prairie Pasque Farm<br/>
-          Growing flowers in and around Baltimore.
+          &copy; 2014 &mdash; Prairie Pasque Farm<br/>
+          Growing flowers &amp; herbs in and around Baltimore.
         </p>
       </div>
     </footer>
@@ -106,6 +125,12 @@
 
     <script>
       $.getJSON("https://graph.facebook.com/264503923722980/photos",function(json){
+        $.each(json.data,function(i,fb){
+          $("#carousel-example-generic div.carousel-inner").append("<div class='item'><img class='img-thumbnail' alt='"+ fb.name +"' src='" + fb.source + "'/><p class='caption'>"+ fb.name +"</p></div>");
+        });
+        $("#carousel-example-generic div.carousel-inner div.item:nth-child(1)").addClass("active");
+      });
+      $.getJSON("http://graph.facebook.com/288124741360898/photos",function(json){
         $.each(json.data,function(i,fb){
           $("#carousel-example-generic div.carousel-inner").append("<div class='item'><img class='img-thumbnail' alt='"+ fb.name +"' src='" + fb.source + "'/><p class='caption'>"+ fb.name +"</p></div>");
         });
